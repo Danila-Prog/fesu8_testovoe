@@ -1,0 +1,51 @@
+.cardHeader {
+    width: 765px;
+    height: 262px;
+}
+
+.normalCard {
+    width: 503px;
+    height: 150px;
+}
+
+.cardHeader,
+.normalCard {
+    position: relative;
+    box-shadow: 0px 7px 25px 0px rgba(100, 100, 111, 0.2);
+
+
+    h1 {
+        font-size: 30px;
+        font-weight: 400;
+        color: #282626;
+        padding: 20px 30px;
+        font-family: "Fira Sans", sans-serif;
+    }
+
+
+    div {
+        width: 100%;
+        position: absolute;
+        bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 30px;
+        margin-bottom: 0;
+
+        span {
+            font-size: 14px;
+            font-weight: 400;
+            color: #767676;
+            font-family: "Montserrat", sans-serif;
+        }
+    }
+
+}
+
+@media (max-width: 1551px) {
+
+    .cardHeader,
+    .normalCard {
+        width: 100%;
+    }
+}

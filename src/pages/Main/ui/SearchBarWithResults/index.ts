@@ -1,0 +1,1 @@
+export { SearchBarWithResults } from "./SearchBarWithResults";
