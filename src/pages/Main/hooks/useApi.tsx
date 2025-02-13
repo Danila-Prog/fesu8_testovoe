@@ -21,7 +21,6 @@ export const useApi = (value: string) => {
 
   const fetchCharacter = useCallback(async (signal: AbortSignal) => {
     try {
-      let allCharacters: IApi[] = [];
       let page = 1;
       let totalPage = 1;
 
@@ -31,12 +30,10 @@ export const useApi = (value: string) => {
         if (!res.ok) throw new Error("Network response was not ok");
 
         const data: ApiResponce = await res.json();
-        allCharacters = [...allCharacters, ...data.results];
+        setValueApi((prev) => [...prev, ...data.results]);
         totalPage = data.info.pages;
         page++;
       }
-
-      setValueApi(allCharacters);
     } catch (error: unknown) {
       if (error instanceof Error && error.name !== "AbortError") {
         console.error("Fetch error:", error);
